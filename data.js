@@ -101,4 +101,4 @@ const cities = [
     }
 ];
 
-module.exports = cities;
+export default cities
