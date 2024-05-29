@@ -98,7 +98,8 @@ const cities = [
       city: 'Madrid',
       temperature: 15,
       forecast: 'Sunny'
-    }
+    },
+
 ];
 
 export default cities

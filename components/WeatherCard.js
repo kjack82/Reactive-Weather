@@ -1,20 +1,26 @@
 import React from "react";
-import sunny from "../assets/Sunny.svg"
+import { getForecastIcon } from "../public/helpers";
+import Location from "./Location";
 
-
-function WeatherCard(props) {
+function WeatherCard({ data, location, setLocation }) {
   return (
-    <div className = "card">
-        <div className = "img-container">
-            <img className="card-img-top" src = {sunny} alt="Card image cap" id = "icon"/>
-        </div>
-        <div class="card-body">
-            <h3 className="card-title">{props.data.city}</h3>
-            <h5 className="card-text">{props.data.temperature}</h5>
-            <h5 className="card-text">{props.data.forecast}</h5>
-        </div>
+    <div className="card">
+      <div className="img-container">
+        <img
+          className="card-img-top"
+          src={getForecastIcon(data.forecast)}
+          alt={data.forecast}
+          id="icon"
+        />
+      </div>
+      <div className="card-body">
+        <h3 className="card-title">{data.city}</h3>
+        <h5 className="card-text">{data.temperature}°C</h5>
+        <h5 className="card-text">{data.forecast}</h5>
+        <Location data={data} location={location} setLocation={setLocation} />
+      </div>
     </div>
   );
-};
+}
 
 export default WeatherCard
