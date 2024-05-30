@@ -3,8 +3,12 @@ import { getForecastIcon } from "../public/helpers";
 
 function Location({ data, location }) {
   // For simplicity, directly use data since we are passing the entire data object
-  const cityData = data;
+  const cityData = data
 
+  if (!location) {
+    return <div>Location not found</div>
+  } 
+  
   if (!cityData) {
     return <div>No data available for the selected location.</div>;
   }
@@ -27,5 +31,5 @@ function Location({ data, location }) {
     </div>
   );
 }
-  
+
   export default Location;
