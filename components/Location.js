@@ -32,4 +32,4 @@ function Location({ data, location }) {
   );
 }
 
-  export default Location;
+ export default Location
